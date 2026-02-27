@@ -59,7 +59,7 @@ const LoginPopup = ({ setShowLogin }) => {
       await register({
         variables: { input: { username: userName, email, password } },
       });
-      alert("User registered successfully! You can now login.");
+      alert("User registered successfully! Chech your email to verify your account.");
       setCurrState("Login");
     } catch (err) {
       setErrorMessage(err.message.replace("GraphQL error: ", ""));
