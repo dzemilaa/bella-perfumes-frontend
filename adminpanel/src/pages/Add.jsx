@@ -153,7 +153,6 @@ const Add = () => {
 
       <form ref={formRef} onSubmit={onSubmitHandler} className="flex flex-col gap-5">
 
-        {/* Image upload */}
         <div className="flex flex-col gap-2">
           <label className="text-sm font-medium text-gray-600">Product Image</label>
           <label htmlFor="image" className="cursor-pointer w-fit">
@@ -168,7 +167,6 @@ const Add = () => {
           <input onChange={(e) => setImage(e.target.files[0])} type="file" id="image" hidden />
         </div>
 
-        {/* Name */}
         <div className="flex flex-col gap-1">
           <label className="text-sm font-medium text-gray-600">Product Name</label>
           <input
@@ -178,7 +176,6 @@ const Add = () => {
           />
         </div>
 
-        {/* Description */}
         <div className="flex flex-col gap-1">
           <label className="text-sm font-medium text-gray-600">Description</label>
           <textarea
@@ -188,7 +185,6 @@ const Add = () => {
           />
         </div>
 
-        {/* Price, Size, Stock, Discount — 1 col on mobile, 2 on desktop */}
         <div className="grid grid-cols-2 sm:grid-cols-2 gap-3 sm:gap-4">
           {[
             { label: "Price ($)", name: "price", placeholder: "e.g. 89.99" },
@@ -207,10 +203,8 @@ const Add = () => {
           ))}
         </div>
 
-        {/* Brand, Gender — stack on mobile */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
 
-          {/* Brand */}
           <div className="flex flex-col gap-1">
             <label className="text-sm font-medium text-gray-600">Brand</label>
             <select
@@ -249,7 +243,6 @@ const Add = () => {
             )}
           </div>
 
-          {/* Gender */}
           <div className="flex flex-col gap-1">
             <label className="text-sm font-medium text-gray-600">Gender</label>
             <select

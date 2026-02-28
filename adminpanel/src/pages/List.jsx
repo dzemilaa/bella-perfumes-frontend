@@ -203,7 +203,7 @@ const List = () => {
               {/* Desktop row */}
               <div className="hidden md:grid grid-cols-[60px_1fr_80px_80px_80px_80px_100px] gap-3 px-4 py-3 items-center text-sm text-gray-700">
                 <img
-                  src={`https://productservice-production-c2fd.up.railway.app${item.imageUrl}`}
+                  src={item.imageUrl}
                   alt={item.name}
                   className="w-12 h-12 object-cover rounded-lg"
                 />
@@ -232,7 +232,7 @@ const List = () => {
               <div className="md:hidden p-4 flex flex-col gap-3">
                 <div className="flex items-center gap-3">
                   <img
-                    src={`https://productservice-production-c2fd.up.railway.app${item.imageUrl}`}
+                    src={`https://res.cloudinary.com/dfnbnkwqr/image/upload/bella-perfumes/${item.imageUrl}`}
                     alt={item.name}
                     className="w-16 h-16 object-cover rounded-xl shrink-0"
                   />
