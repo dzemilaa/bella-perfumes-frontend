@@ -176,10 +176,8 @@ const ProductPage = () => {
 
   return (
     <div className="max-w-5xl mx-auto px-4 py-12">
-      {/* Product card */}
       <div className="bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col md:flex-row gap-8 p-8">
 
-        {/* Slika */}
         <div className="flex-1 flex justify-center items-center bg-gray-50 rounded-xl p-6">
           <img
             src={`https://productservice-production-c2fd.up.railway.app/${product.imageUrl}`}
@@ -187,8 +185,6 @@ const ProductPage = () => {
             className="max-h-80 object-contain"
           />
         </div>
-
-        {/* Info */}
         <div className="flex-1 flex flex-col justify-between gap-4">
           <div>
             <p className="text-sm text-pink-500 font-medium uppercase tracking-widest">{product.brands?.name}</p>
@@ -196,7 +192,6 @@ const ProductPage = () => {
             <p className="text-gray-500 mt-1">{product.size}ml</p>
             <p className="text-gray-600 mt-4 text-sm leading-relaxed">{product.description}</p>
           </div>
-
           <div>
             <p className="text-2xl font-bold text-pink-600 mb-4">$ {product.price}</p>
             <div className="flex gap-3">
@@ -221,7 +216,6 @@ const ProductPage = () => {
         </div>
       </div>
 
-      {/* Reviews sekcija */}
       <div className="mt-10">
         <h2 className="text-2xl font-bold text-gray-800 mb-6">Customer Reviews</h2>
 

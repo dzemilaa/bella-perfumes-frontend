@@ -12,7 +12,6 @@ const navItems = [
 const Sidebar = () => {
   return (
     <>
-      {/* Desktop sidebar */}
       <div className="hidden sm:flex min-h-screen w-52 bg-white border-r border-gray-200 shadow-sm flex-col pt-8">
         <div className="flex flex-col gap-2 px-3">
           {navItems.map((item) => (
@@ -33,8 +32,7 @@ const Sidebar = () => {
           ))}
         </div>
       </div>
-
-      {/* Mobile bottom nav */}
+       //mobilna verzija
       <div className="sm:hidden fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-gray-200 shadow-lg">
         <div className="flex justify-around items-center py-2">
           {navItems.map((item) => (

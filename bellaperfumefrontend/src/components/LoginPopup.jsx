@@ -50,7 +50,7 @@ const LoginPopup = ({ setShowLogin }) => {
       setErrorMessage(err.message.replace("GraphQL error: ", ""));
     }
   };
-
+  //da se ne bi refreshovala stranica i izgubili podaci
   const handleSignUp = async (e) => {
     e.preventDefault();
     setErrorMessage("");

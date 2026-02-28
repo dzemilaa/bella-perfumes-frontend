@@ -193,7 +193,6 @@ export default function PlaceOrderPage() {
 
   return (
     <div className="p-3 sm:p-6 max-w-4xl mx-auto flex flex-col md:flex-row gap-6">
-      {/* Delivery form */}
       <div className="flex-1 bg-white p-6 rounded shadow space-y-4">
         <h2 className="text-2xl font-bold mb-4">Delivery Information</h2>
         <div className="flex flex-col sm:flex-row gap-2">
@@ -221,7 +220,6 @@ export default function PlaceOrderPage() {
         )}
       </div>
 
-      {/* Order summary */}
       <div className="w-full md:w-1/3 bg-white p-6 rounded shadow space-y-4">
         <h2 className="text-2xl font-bold">Order Summary</h2>
         <div className="space-y-2">

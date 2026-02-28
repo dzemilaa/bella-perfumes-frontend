@@ -17,6 +17,7 @@ const Verify = () => {
   const [verifyEmail] = useMutation(VERIFY_EMAIL, { client: authClient });
 
   useEffect(() => {
+    //uzima token iz url-a
     const queryParams = new URLSearchParams(window.location.search);
     const token = queryParams.get('token');
 

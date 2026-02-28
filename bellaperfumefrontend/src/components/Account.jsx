@@ -23,7 +23,6 @@ const Account = () => {
   const [formData, setFormData] = useState({});
   const [editing, setEditing] = useState(false);
   const [passwordConfirm, setPasswordConfirm] = useState("");
-
   const [updateProfile, { loading }] = useMutation(UPDATE_PROFILE, { client: authClient });
 
   useEffect(() => {
@@ -73,7 +72,6 @@ const Account = () => {
       };
       setUser(updatedUser);
       sessionStorage.setItem("user", JSON.stringify(updatedUser));
-
       setEditing(false);
       setPasswordConfirm("");
       setFormData((prev) => ({ ...prev, password: "" }));

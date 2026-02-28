@@ -106,7 +106,6 @@ const Cart = () => {
       <h1 className="text-3xl font-extrabold mb-6 text-center">Your Cart</h1>
 
       <div className="bg-white shadow-md rounded-lg overflow-hidden">
-        {/* Header */}
         <div className="hidden sm:grid grid-cols-7 gap-2 px-4 py-3 bg-gray-100 text-gray-600 font-semibold">
           <p>Image</p>
           <p>Title</p>
@@ -187,7 +186,6 @@ const Cart = () => {
         )}
       </div>
 
-      {/* Totals */}
       <div className="mt-8 flex justify-end">
         <div className="bg-white shadow-md rounded-lg p-6 w-full sm:w-1/3">
           <h2 className="text-xl font-bold mb-4">Totals</h2>

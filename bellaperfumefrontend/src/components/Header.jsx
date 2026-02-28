@@ -62,6 +62,7 @@ const Header = () => {
     const value = e.target.value;
     setSearchQuery(value);
 
+    //brise prethodni tajmer da ne bi slao vise poziva
     if (debounceTimeout.current) clearTimeout(debounceTimeout.current);
 
     if (!value.trim()) {
@@ -69,6 +70,7 @@ const Header = () => {
       return;
     }
 
+    //ne salje za svaki karakter poziv vec tek kad prestanemo da kucamo 
     debounceTimeout.current = setTimeout(() => {
       fetchProducts({
         variables: {
@@ -128,7 +130,6 @@ const Header = () => {
 
   const cartCount = cartData?.cart ? new Set(cartData.cart.map(i => i.productId)).size : 0;
   const favoriteCount = favoriteData?.favorite ? favoriteData.favorite.length : 0;
-
   const results = data?.products?.nodes ?? [];
 
   return (

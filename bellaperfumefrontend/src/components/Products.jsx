@@ -129,7 +129,6 @@ const ProductsPage = () => {
 
   return (
     <div className="px-4" id="categories">
-      {/* Kategorije */}
       <section className="px-4">
         <h1 className="text-center text-4xl sm:text-5xl font-extrabold mb-10">
           Our Perfume Collection
@@ -173,7 +172,6 @@ const ProductsPage = () => {
         </div>
       </section>
 
-      {/* Proizvodi */}
       <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mt-10" id="products">
         {filteredProducts.map((product) => {
           const hasDiscount = product.discount > 0;
@@ -187,7 +185,6 @@ const ProductsPage = () => {
               onClick={() => navigate(`/page/${product.id}`)}
               className="relative rounded p-4 shadow-md bg-white hover:shadow-lg transition-shadow duration-300 cursor-pointer"
             >
-              {/* Discount badge */}
               {hasDiscount && (
                 <div className="absolute top-3 right-3 z-10 bg-pink-600 text-white text-xs font-bold px-2 py-1 rounded-full">
                   -{product.discount}%
@@ -200,7 +197,6 @@ const ProductsPage = () => {
                 className="w-full h-64 object-contain rounded-2xl mb-4"
               />
 
-              {/* Favorite dugme */}
               <button
                 className="absolute top-3 left-3 z-10 p-2 bg-white rounded-full shadow-md hover:bg-pink-100"
                 onClick={(e) => { e.stopPropagation(); handleToggleFavorite(product.id); }}
@@ -228,7 +224,6 @@ const ProductsPage = () => {
                   )}
                 </div>
 
-                {/* Cart dugme */}
                 <button
                   onClick={(e) => { e.stopPropagation(); handleAddToCart(product.id); }}
                   className="p-2 bg-pink-950 rounded-full text-white hover:bg-pink-700 transition-colors"
