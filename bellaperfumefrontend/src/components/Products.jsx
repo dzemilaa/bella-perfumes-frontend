@@ -211,7 +211,7 @@ const ProductsPage = () => {
               <h2 className="font-bold text-lg">{product.name}</h2>
               <p className="text-gray-600 text-sm">
                 {product.description
-                  ? product.description.split('. ').slice(0, 2).join('. ') + (product.description.split('. ').length > 2 ? '...' : '')
+                  ? product.description.split('. ')[0] + (product.description.split('. ').length > 1 ? '...' : '')
                   : ''}
               </p>
               <p className="text-gray-600 text-sm">{product.size}ml</p>
