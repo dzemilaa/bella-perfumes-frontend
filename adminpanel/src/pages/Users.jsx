@@ -137,7 +137,6 @@ const Users = () => {
         className="w-full max-w-md px-4 py-2.5 border border-gray-300 rounded-xl text-sm mb-6 focus:outline-none focus:ring-2 focus:ring-pink-400"
       />
 
-      {/* Desktop table header */}
       <div className="hidden md:grid grid-cols-[1fr_1.5fr_2fr_1fr_1fr_120px] gap-3 px-4 py-3 bg-gray-50 rounded-xl border border-gray-200 text-xs font-semibold text-gray-500 uppercase mb-2">
         <span>ID</span>
         <span>Username</span>
@@ -156,7 +155,7 @@ const Users = () => {
               key={user.id}
               className="border border-gray-200 rounded-xl hover:bg-gray-50 transition overflow-hidden"
             >
-              {/* Desktop row */}
+
               <div className="hidden md:grid grid-cols-[1fr_1.5fr_2fr_1fr_1fr_120px] gap-3 px-4 py-3 items-center text-sm text-gray-700">
                 <p className="font-mono text-xs text-gray-400 truncate">{user.id}</p>
                 <div className="flex items-center gap-2">
@@ -190,9 +189,7 @@ const Users = () => {
                 </div>
               </div>
 
-              {/* Mobile card */}
               <div className="md:hidden p-4 flex flex-col gap-3">
-                {/* Header: avatar + info + actions */}
                 <div className="flex items-center justify-between gap-2">
                   <div className="flex items-center gap-3">
                     <div className="w-9 h-9 rounded-full bg-pink-100 flex items-center justify-center text-pink-600 font-bold text-sm uppercase shrink-0">
@@ -221,7 +218,6 @@ const Users = () => {
                   </div>
                 </div>
 
-                {/* Badges + ID */}
                 <div className="flex items-center gap-2 flex-wrap">
                   <span className={`text-xs px-2 py-1 rounded-full border font-medium ${user.isActive ? 'bg-green-100 text-green-700 border-green-200' : 'bg-red-100 text-red-500 border-red-200'}`}>
                     {user.isActive ? 'Active' : 'Inactive'}
