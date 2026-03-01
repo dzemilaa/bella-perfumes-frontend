@@ -46,6 +46,7 @@ const DELETE_REVIEW = gql`
 `;
 
 const Reviews = () => {
+  const [productsMap, setProductsMap] = useState({});
   const [usersMap, setUsersMap] = useState({});
   const [reviews, setReviews] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
@@ -66,6 +67,12 @@ const Reviews = () => {
         variables: { ids: allProductIds },
         fetchPolicy: 'network-only',
       });
+
+      const productMap = {};
+      productData.products.nodes.forEach(p => {
+        productMap[p.id] = p.name;
+      });
+      setProductsMap(productMap);
 
       const map = {};
       usersRes.data.getAllUsers.forEach(u => {
@@ -150,7 +157,7 @@ const Reviews = () => {
               <div className="hidden md:grid grid-cols-[1fr_1fr_1fr_2fr_1fr_80px] gap-3 px-4 py-3 items-center text-sm text-gray-700">
                 <p className="font-mono text-xs text-gray-400 truncate">{review.reviewId}</p>
                 <p className="font-mono text-xs text-gray-400 truncate">{usersMap[review.userId] || review.userId}</p>
-                <p className="font-mono text-xs text-gray-400 truncate">{productData?.products?.nodes?.find(p => p.id === review.productId)?.name || review.productId}</p>
+                <p className="font-mono text-xs text-gray-400 truncate"> {productsMap[review.productId] || review.productId}</p>
                 <p className="text-gray-600 text-sm line-clamp-2">{review.reviewText}</p>
                 <p className="text-xs text-gray-400">
                   {new Date(review.createdAt).toLocaleDateString("en-GB", {
