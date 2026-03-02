@@ -121,11 +121,14 @@ const Orders = () => {
   const getDiscountedPrice = (price, discount) =>
     discount > 0 ? price * (1 - discount / 100) : price;
 
-  const calcOrderTotal = (orderItems) => {
+  const calcOrderTotal = (orderItems, promoCode) => {
     const subtotal = orderItems.reduce((acc, item) => {
       return acc + getDiscountedPrice(item.price, item.discount) * item.quantity;
     }, 0);
-    return subtotal + 2; // delivery fee
+    const deliveryFee = 2;
+    const discountAmount = promoCode === 'DISCOUNT10' ? subtotal * 0.1 : 0;
+
+    return subtotal + deliveryFee - discountAmount;
   };
 
   useEffect(() => {
@@ -150,7 +153,8 @@ const Orders = () => {
       ) : (
         <div className="flex flex-col gap-4">
           {orders.map((order) => {
-            const calculatedTotal = calcOrderTotal(order.orderItems);
+            const promoCode = localStorage.getItem(`promo_code_${order.id}`);
+            const calculatedTotal = calcOrderTotal(order.orderItems, promoCode);
             return (
               <div key={order.id} className="bg-white border border-gray-200 rounded-2xl shadow-sm p-6">
                 <div className="flex flex-col md:flex-row md:items-start gap-6">
@@ -197,7 +201,14 @@ const Orders = () => {
 
                     <div className="flex items-center justify-between mt-4">
                       <div>
-                        <p className="text-xs text-gray-400">Total (with discounts + delivery)</p>
+                        <p className="text-xs text-gray-400">
+                          Total (with discounts + delivery)
+                          {promoCode === 'DISCOUNT10' && (
+                            <span className="text-green-600 ml-2 font-semibold">
+                              (PROMO applied: -10%)
+                            </span>
+                          )}
+                        </p>
                         <p className="text-lg font-bold text-pink-600">${calculatedTotal.toFixed(2)}</p>
                       </div>
                       <select
